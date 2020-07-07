@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PokemonActivity"></activity>
+        <activity android:name=".MovesActivity"></activity>
+        <activity android:name=".PokemonActivity" />
         <activity android:name=".PokedexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
