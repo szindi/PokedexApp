@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.szindi.dmit2504.pokedexstart">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MovesActivity"></activity>
-        <activity android:name=".PokemonActivity" />
-        <activity android:name=".PokedexActivity">
+        <activity
+            android:name=".MovesActivity"
+            android:label="Moves" />
+        <activity
+            android:name=".PokemonActivity"
+            android:label="Pokemon" />
+        <activity
+            android:name=".PokedexActivity"
+            android:label="Pokedex">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
