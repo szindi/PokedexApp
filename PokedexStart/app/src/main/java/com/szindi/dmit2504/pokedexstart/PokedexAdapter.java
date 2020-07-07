@@ -1,6 +1,5 @@
 package com.szindi.dmit2504.pokedexstart;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +15,9 @@ import java.util.ArrayList;
 public class PokedexAdapter extends BaseAdapter {
 
     private final String URL_FORMAT = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%d.png";
-    private Context mContext;
     private ArrayList<Result> mResults;
 
-    public PokedexAdapter(Context context, ArrayList<Result> results) {
-        mContext = context;
+    public PokedexAdapter(ArrayList<Result> results) {
         mResults = results;
     }
 
