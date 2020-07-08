@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,4 +33,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    /* Navigation/FragmentContainer */
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+
+    /* UI Colors */
+    implementation 'com.google.android.material:material:1.1.0'
+
+    /* Retrofit */
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    /* Picasso */
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
