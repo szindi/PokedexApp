@@ -3,8 +3,10 @@ Shingai Zindi
 
 ## Purpose
 To be used for an in class demo of the use of Fragments in an Android app.
-### Responsive Layouts
+### Fragments
+#### Responsive Layouts
 ### ViewPager2
+#### TabLayout
 
 ## 
 ## Changes from Proposal
