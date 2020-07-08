@@ -21,8 +21,11 @@ import retrofit2.Response;
 
 public class PokemonActivity extends BaseActivity {
 
+    private static final String NAME = "NAME";
+
     private String mPokemonName;
     private Pokemon mPokemon;
+
     private ImageView mSpriteView;
     private TextView mNameTextView;
     private TextView mNumberTextView;
@@ -35,8 +38,7 @@ public class PokemonActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_pokemon);
 
-        mPokemon = new Pokemon();
-        mPokemonName = getIntent().getStringExtra("NAME");
+        mPokemonName = getIntent().getStringExtra(NAME);
 
         mSpriteView = findViewById(R.id.fragment_pokemon_sprite);
         mNameTextView = findViewById(R.id.fragment_pokemon_name);
@@ -50,6 +52,10 @@ public class PokemonActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
+        getPokemon();
+    }
+
+    private void getPokemon() {
         Call<Pokemon> getCall = mPokeService.getPokemonByName(mPokemonName);
         getCall.enqueue(new Callback<Pokemon>() {
             @Override
@@ -68,7 +74,6 @@ public class PokemonActivity extends BaseActivity {
                     mNumberTextView.setText(mPokemon.getId().toString());
                     mHeightTextView.setText(String.valueOf((double) mPokemon.getHeight() / 10));
                     mWeightTextView.setText(String.valueOf((double) mPokemon.getWeight() / 10));
-
 
                     TypeAdapter adapter = new TypeAdapter(mPokemon);
                     mListView.setAdapter(adapter);

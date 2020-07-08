@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class PokemonFragment extends BaseFragment {
 
-    private static final String NAME = "NAME";
+    protected static final String NAME = "NAME";
 
     protected String mPokemonName;
     protected Pokemon mPokemon;
@@ -39,7 +39,7 @@ public class PokemonFragment extends BaseFragment {
     public static PokemonFragment newInstance(String pokemonName) {
         PokemonFragment fragment = new PokemonFragment();
         Bundle args = new Bundle();
-        args.putString("NAME", pokemonName);
+        args.putString(NAME, pokemonName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -81,6 +81,7 @@ public class PokemonFragment extends BaseFragment {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     mPokemon = new Pokemon(response.body());
 
                     Picasso.get()
@@ -93,7 +94,6 @@ public class PokemonFragment extends BaseFragment {
                     mNumberTextView.setText(mPokemon.getId().toString());
                     mHeightTextView.setText(String.valueOf((double) mPokemon.getHeight() / 10));
                     mWeightTextView.setText(String.valueOf((double) mPokemon.getWeight() / 10));
-
 
                     TypeAdapter adapter = new TypeAdapter(mPokemon);
                     mListView.setAdapter(adapter);
