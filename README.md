@@ -28,3 +28,19 @@ implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
 ### Picasso
 implementation 'com.squareup.picasso:picasso:2.71828'
+
+## 
+## Resources Used for Research
+### Android
+https://developer.android.com/guide/navigation/navigation-swipe-view-2
+https://developer.android.com/guide/practices/screens_support
+https://developer.android.com/training/basics/fragments/creating
+https://developer.android.com/training/basics/fragments/fragment-ui
+### AndroidHive
+https://www.androidhive.info/2020/01/viewpager2-pager-transformations-intro-slider-pager-animations-pager-transformations/
+### AndroidWave
+https://androidwave.com/viewpager2-with-fragments-android-example/
+### CodePath
+https://guides.codepath.com/android/viewpager-with-fragmentpageradapter
+https://stackoverflow.com/questions/54643379/proper-implementation-of-viewpager2-in-android
+https://stackoverflow.com/questions/14880746/difference-between-sw600dp-and-w600dp
