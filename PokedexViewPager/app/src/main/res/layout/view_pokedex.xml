@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_pokedex_viewgroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="80dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# "
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/view_pokedex_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Pokemon Number" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/view_pokedex_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Pokemon Name" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/view_pokedex_sprite"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="right"
+        android:contentDescription="Pokemon Sprite"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</LinearLayout>
