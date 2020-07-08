@@ -20,7 +20,9 @@ public class AbilitiesActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_abilities);
+
         mPokemonName = getIntent().getStringExtra("NAME");
+
         mListView = findViewById(R.id.fragment_abilities_listView);
     }
 

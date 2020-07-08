@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".AbilitiesActivity"
+            android:label="Abilities" />
+        <activity
+            android:name=".StatsActivity"
+            android:label="Stats" />
+        <activity
             android:name=".MovesActivity"
             android:label="Moves" />
         <activity

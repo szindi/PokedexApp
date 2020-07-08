@@ -5,9 +5,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.pokeapi.Pokemon;
-import com.pokeapi.Stat;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,7 +14,6 @@ public class StatsActivity extends BaseActivity {
 
     private String mPokemonName;
     private Pokemon mPokemon;
-    private ArrayList<Stat> mStats;
     private ListView mListView;
 
     @Override
@@ -26,6 +22,8 @@ public class StatsActivity extends BaseActivity {
         setContentView(R.layout.fragment_stats);
 
         mListView = findViewById(R.id.fragment_stats_listView);
+
+        mPokemonName = getIntent().getStringExtra("NAME");
     }
 
     @Override
@@ -33,20 +31,16 @@ public class StatsActivity extends BaseActivity {
         super.onResume();
 
         getPokemon();
-
-
     }
 
     protected void getPokemon() {
-        mPokemonName = getIntent().getStringExtra("NAME");
 
         Call<Pokemon> getCall = mPokeService.getPokemonByName(mPokemonName);
         getCall.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
-                mPokemon = response.body();
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), mPokemon.getName(), Toast.LENGTH_SHORT).show();
+                    mPokemon = response.body();
 
                     StatsAdapter adapter = new StatsAdapter(mPokemon);
                     mListView.setAdapter(adapter);
