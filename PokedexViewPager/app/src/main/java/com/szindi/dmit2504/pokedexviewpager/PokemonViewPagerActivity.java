@@ -20,9 +20,6 @@ public class PokemonViewPagerActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_view_pager);
 
-        ActionBar actionBar = getSupportActionBar();
-
-
         mPokemonName = getIntent().getStringExtra("NAME");
 
         mViewPager = findViewById(R.id.activity_pokemon_view_pager_viewPager);
