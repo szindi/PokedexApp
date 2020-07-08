@@ -6,12 +6,15 @@ To be used for an in class demo of the use of Fragments in an Android app.
 ### Responsive Layouts
 ### ViewPager2
 
+## 
 ## Changes from Proposal
 I changed my original plan of migrating either Jitters or NhlStats apps from class to migrating a custom Pokemon Pokedex App
 
+## 
 ## Requirements
 This app requires internet access at all times to function properly.
 
+## 
 ## Dependencies
 ### Navigation/FragmentContainer
 implementation 'androidx.navigation:navigation-fragment:2.3.0'
