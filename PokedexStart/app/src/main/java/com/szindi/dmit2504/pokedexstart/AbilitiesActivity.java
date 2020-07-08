@@ -12,6 +12,8 @@ import retrofit2.Response;
 
 public class AbilitiesActivity extends BaseActivity {
 
+    private static final String NAME = "NAME";
+
     public Pokemon mPokemon;
     private String mPokemonName;
     private ListView mListView;
@@ -21,7 +23,7 @@ public class AbilitiesActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_abilities);
 
-        mPokemonName = getIntent().getStringExtra("NAME");
+        mPokemonName = getIntent().getStringExtra(NAME);
 
         mListView = findViewById(R.id.fragment_abilities_listView);
     }
@@ -33,8 +35,7 @@ public class AbilitiesActivity extends BaseActivity {
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 mPokemon = response.body();
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), mPokemon.getName(), Toast.LENGTH_SHORT).show();
-
+                    assert response.body() != null;
                     AbilitiesAdapter adapter = new AbilitiesAdapter(mPokemon);
                     mListView.setAdapter(adapter);
                 } else {

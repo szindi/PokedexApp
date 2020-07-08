@@ -76,6 +76,7 @@ public class MovesFragment extends BaseFragment {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     mPokemon = response.body();
 
                     MovesAdapter adapter = new MovesAdapter(mPokemon);

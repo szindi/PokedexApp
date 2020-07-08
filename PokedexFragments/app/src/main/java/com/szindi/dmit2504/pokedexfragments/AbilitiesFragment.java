@@ -64,7 +64,7 @@ public class AbilitiesFragment extends BaseFragment {
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 mPokemon = response.body();
                 if (response.isSuccessful()) {
-                    Toast.makeText(getContext(), mPokemon.getName(), Toast.LENGTH_SHORT).show();
+                    assert response.body() != null;
 
                     AbilitiesAdapter adapter = new AbilitiesAdapter(mPokemon);
                     mListView.setAdapter(adapter);

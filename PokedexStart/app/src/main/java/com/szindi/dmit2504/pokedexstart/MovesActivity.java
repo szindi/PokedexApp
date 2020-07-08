@@ -12,6 +12,8 @@ import retrofit2.Response;
 
 public class MovesActivity extends BaseActivity {
 
+    private static final String NAME = "NAME";
+
     private String mPokemonName;
     private Pokemon mPokemon;
     private ListView mListView;
@@ -23,7 +25,7 @@ public class MovesActivity extends BaseActivity {
 
         mListView = findViewById(R.id.fragment_moves_listView);
 
-        mPokemonName = getIntent().getStringExtra("NAME");
+        mPokemonName = getIntent().getStringExtra(NAME);
     }
 
     @Override
@@ -39,9 +41,9 @@ public class MovesActivity extends BaseActivity {
         getCall.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
-                mPokemon = response.body();
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), mPokemon.getName(), Toast.LENGTH_SHORT).show();
+                    assert response.body() != null;
+                    mPokemon = response.body();
 
                     MovesAdapter adapter = new MovesAdapter(mPokemon);
                     mListView.setAdapter(adapter);

@@ -12,6 +12,9 @@ import retrofit2.Response;
 
 public class StatsActivity extends BaseActivity {
 
+    private static final String NAME = "NAME";
+
+
     private String mPokemonName;
     private Pokemon mPokemon;
     private ListView mListView;
@@ -23,7 +26,7 @@ public class StatsActivity extends BaseActivity {
 
         mListView = findViewById(R.id.fragment_stats_listView);
 
-        mPokemonName = getIntent().getStringExtra("NAME");
+        mPokemonName = getIntent().getStringExtra(NAME);
     }
 
     @Override
@@ -40,6 +43,7 @@ public class StatsActivity extends BaseActivity {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     mPokemon = response.body();
 
                     StatsAdapter adapter = new StatsAdapter(mPokemon);

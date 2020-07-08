@@ -75,6 +75,7 @@ public class StatsFragment extends BaseFragment {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     mPokemon = response.body();
 
                     StatsAdapter adapter = new StatsAdapter(mPokemon);
