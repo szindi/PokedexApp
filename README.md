@@ -45,5 +45,6 @@ https://guides.codepath.com/android/viewpager-with-fragmentpageradapter
 https://stackoverflow.com/questions/54643379/proper-implementation-of-viewpager2-in-android
 https://stackoverflow.com/questions/14880746/difference-between-sw600dp-and-w600dp
 
+## 
 ## Practice/Testing Repo
 https://github.com/szindi/PokedexTest
